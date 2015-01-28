@@ -21,7 +21,7 @@ view:
 	open $(TARGET).pdf &
 
 clean:
-	rm -f $(TARGET).aux $(TARGET).bbl $(TARGET).blg $(TARGET).log $(TARGET).out
+	rm -f $(TARGET).aux $(TARGET).bbl $(TARGET).blg $(TARGET).log $(TARGET).out *.log
 
 distclean:clean
 	rm -f $(TARGET).pdf
