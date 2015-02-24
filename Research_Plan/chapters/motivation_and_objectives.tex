@@ -1,7 +1,31 @@
 \section{Motivation and Objectives}
 \label{sec:Motivation and Objectives}
 
-\begin{itemize}
-	\item \emph{Motivation \& relation to current work at ASL}
-	\item \emph{Objectives}
-\end{itemize}
+\begin{figure}[t]
+ 	 \centering
+  	\includegraphics[width=1\textwidth]{images/firefly.jpg}
+	  \caption{The AscTec Firefly, an agile hex-rotor UAV with configurable payload and software.}
+	  \label{fig:firefly}
+\end{figure}
+
+Autonomous multirotor unmanned aerial vehicles are ideal platforms to collect data about the environment over prolonged periods of time. Such UAVs have important benefits: (1) they need not interfere with the terrain, preventing any degradation or damage , and (2) they are highly maneuverable, unlike fixed-wing UAVs, and hence are able to take targeted high resolution imagery of areas of interest. As a result, these platforms have been the focus of increasing interest in recent years from researchers and the public in general. Proposed use cases for such platforms have included wrist strapped devices taking pictures of the wearer \cite{Web:Nixie}, remote monitoring of coral reefs under the sea \cite{Web:fluidlensing}, and terrain mapping on Mars \cite{Web:nasadrone}.
+
+
+\iffalse
+Small, autonomous, multirotor UAVs may be used to collect sensor data (such as multi-spectral imagery and three-dimensional depth data) over large areas, such as farms, continuously over prolonged time periods (the growing season). (soil compaction) that would result from frequent monitoring with ground vehicles such as disease or weed infested areas), through close fly-bys when required. Complementary mapping software may be used to convert the raw data into multi-resolution, multi-spectral maps that encode both three-dimensional geometry and changes over time. This data can then be used to estimate metrics such as canopy height, plant leaf area index, and the normalized difference vegetation index to identify areas of the field which actually require mechanical or chemical treatment, for example weed removal or fertilizer applicaiton.
+
+The thesis envisions a robotic agricultural system that enables achieving high yields while minimizing or eliminating the application of chemicals to the field. The concept, shown in Figure~\ref{fig:concept-overview}, is based on one or more UAVs which perform continuous survey of the field over the course of the growing season working in tandem with farm operators that oversee the operation and make high level decisions based on the incoming data. The concept is {\em flexible} in that the individual elements of continuous survey, ground intervention, and data analysis can be tailored to apply to a wide variety of agricultural situations simply by varying the sensors, the treatment method, and the data analytics. Together, the system has the potential to support the production of high-quality organic produce at large scales.
+
+The Autonomous Systems Lab at
+ETH belongs to the world's leading labs investigating innovative methods for UAV based perception, localization and mapping approaches, especially in GPS denied environments. Members have contributed to many state of the art approaches and published the results open source \cite{steder2008visual,weiss2012real,weiss2012versatile,leutenegger_rss13}. 
+
+ 
+
+ The ASL has experience deploying sensors to track growth markers in fields \cite{mielewczik2013diel,walter2012advanced} and expertise in state estimation for micro aerial vehicles using vision and inertial sensors, both with and without GPS \cite{weiss13monocular,leutenegger_rss13} but these technologies were developed separately. This thesis will bring these two competencies together and combine them with recent work focused on long-term mapping and change detection from UGVs in dynamic environments \cite{pomerleau_icra14}. {\em Over the duration of the thesis, we will deploy a UAV equipped with multispectral imagers to build and update maps of a field over a growing season.}
+
+ \fi
+
+% \begin{itemize}
+%	\item \emph{Motivation \& relation to current work at ASL}
+%	\item \emph{Objectives}
+% \end{itemize}
