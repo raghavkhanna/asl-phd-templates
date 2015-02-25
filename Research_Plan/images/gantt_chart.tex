@@ -28,24 +28,34 @@ milestone label anchor/.style={below left=-1.7ex and 0.2ex}
 \gantttitlelist{1,...,24}{1} \\
 
 % Group 1
-\ganttgroup{Group 1}{1}{12} \\
-\ganttbar{Task 1}{1}{2} \\
-\ganttbar{Task 2}{3}{8} \\
-\ganttbar{Task 3}{9}{10} \\
-\ganttbar{Task 4}{11}{12} \\
-\ganttmilestone{Publication 1}{12} \\
+\ganttgroup{Sate Estimation}{1}{6} \\
+\ganttbar{Visual inertial localisation}{1}{2} \\
+\ganttbar{Map API Interface}{2}{3} \\
+\ganttbar{GPS integration}{4}{5} \\
+\ganttbar{Field testing}{6}{6} \\
 
+%data association, filtering, data fusion, and map optimization
 % Group 2
 \ganttnewline
-\ganttgroup{Group 2}{13}{24} \\
-\ganttbar{Task 5}{13}{16} \\
-\ganttbar{Task 6}{15}{18} \\
-\ganttbar{Task 7}{19}{22} \\
-\ganttmilestone{Publication 2}{22} \\
-\ganttbar{Task 8}{23}{24}
+\ganttgroup{Environment Modeling}{7}{18} \\
+\ganttbar{Data association}{7}{8} \\
+\ganttbar{Filtering}{9}{15} \\
+\ganttbar{Map optimisation}{11}{18} \\
+
+% Group 3
+\ganttnewline
+\ganttgroup{Data Analysis}{13}{24} \\
+\ganttbar{Indicator description}{13}{18} \\
+\ganttbar{Indicator extraction}{14}{24} \\
+\ganttbar{Ground truth comparison}{14}{15} \\
+
+\\
+\ganttbar{Data collection}{1}{6} \ganttbar{Data collection}{12}{18} \\
+\\
+\ganttmilestone{Publications}{6} \ganttmilestone{Publications}{12} \ganttmilestone{Publications}{15} \ganttmilestone{Publications}{21} \ganttmilestone{Publications}{24} \\
 
 % Relations 
-\ganttlink{elem3}{elem7} 
+%\ganttlink{elem3}{elem7} 
 
 \end{ganttchart}
 \end{center}

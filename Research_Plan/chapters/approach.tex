@@ -4,9 +4,60 @@
 \begin{figure}[h]
    \centering
     \includegraphics[width=1\textwidth]{images/farm-render-with-text.png}
-    \caption{An overview of the thesis concept. A UAV continuously surveys a field over the growing season and data analysis is delivered to farm operators for high-level decision making who may use existing farm equipment such as tractors or autonomous Unmanned Ground Vehicles (UGVs) for targeted intervention in the field}
+    \caption{An example application of the results of this thesis. A UAV continuously surveys a field over the growing season and data analysis is delivered to farm operators for high-level decision making who may use existing farm equipment such as tractors or autonomous Unmanned Ground Vehicles (UGVs) for targeted intervention in the field}
     \label{fig:concept-overview}
 \end{figure}
+
+\textbf{The aim of this research is to develop the required technological capabilities which enable UAVs to operate autonomously and develop a useful and informative 3D representation and understanding within a farm environment.} This is divided into three main sub-tasks of \textit{state estimation}, \textit{environment modeling} and \textit{data interpretation}. The desired level of autonomy and user-friendliness demands further improvement of state of the art approaches and adaptations which take into consideration the environment under which the UAV is operating.
+
+
+\subsection{State Estimation}
+	
+ The homogeneous visual nature of the crops on an agricultural field makes an accurate estimation of the UAV position difficult. Since GPS accuracy is not adequate for constructing the high resolution field maps or defining an optimal path for a UGV intervention, accurate localization of the UAV over the field will be obtained through a fusion of visual cues, inertial and GPS data. The current state of the art technique in visual inertial state estimation \cite{leutenegger2013keyframe} will be extended to incorporate GPS cues using an Extended Kalman Filter (EKF) with a focus on robustness during noisy visual-inertial estimates or absence of GPS data. Experiments to evaluate the performance of the state estimator on a real farm environment will be conducted using ground truth data from the Leica Geosystems Total Station.
+	
+\subsection{Environment Modeling}
+
+ During this thesis, UAVs will be used to collect multi-spectral imagery and three-dimensional depth data, over farms, continuously over prolonged time periods (the growing season). The survey data collected by the on-board sensors over multiple flights will be used to build a multi-resolution spatio-temporal database of the field which encodes both three-dimensional geometry and changes over time.  The
+  interpreted data will be used to generate maps in human readable
+  format, with parameters suitable for informing the farmer, such as
+  crop density, plant health, weed pressure and nitrogen nutrition
+  status, as well as 3D key points for the UAV to use while navigating.
+
+  This information will be used to support model-driven decision
+  making for farm management. Over the short term, this may include
+  determining a feasible path for a UGV through the field, detection
+  of weeds, indicating areas requiring water or fertilizer and
+  detecting any trespassing animals. Over the long term, the database
+  may be used to measure crop growth over time and compare field
+  performance over seasons to optimize when and how much external
+  inputs are added, in order to maximize yield and minimize input.
+
+  The aerial map construction process will address data association,
+  filtering, data fusion, and map optimization.  The sensor data will
+  be locally fused in a robust, multi-sensor, semi-direct optimization
+  framework.  For each sensor, I will associate a confidence that
+  depends on basic robot state parameters (e.g., the UAV altitude,
+  time, etc.) and on the environment conditions (e.g., weather
+  conditions, environment morphology, etc.).  The confidence
+  information will be dynamically exploited inside the
+  optimization. For instance, if the UAV is flying at a low altitude
+  in a partially occluded environment, the GPS readings will be
+  trusted less due to the possible signal occlusions or reflection
+  resulting from the surrounding structures that decrease the quality
+  of the GPS signal.
+
+
+
+\subsection{Data Analysis and Interpretation}
+
+ The raw data collected by on board sensors of the UAV will be analyzed and converted into semantic information about the crops growing on the field, and averaged over small parts ({\raise.17ex\hbox{$\scriptstyle\sim$}} 1 $m^2$). Specifically, the images captured by the RGBI and thermal cameras will be converted into normalized vegetation indices representing the general health of the crops on the field. Other well known plant growth and vitality indicators such as height, canopy cover and leaf greenness will also be estimated. These parameter estimates obtained using the UAV data, will be compared with state of the art estimates for the field parameters obtained from ETHZ's unique Field Phenotyping Platform (FIP) facility at Lindau-Eschikon in order to verify their accuracy and robustness. Furthermore, a scientific methodology for calculating farm input recommendations, using a combination of these parameters, will be developed and tested for efficacy, improving transparency amongst the general public and farmers who currently have to rely on black-box estimates provided by equipment manufacturers.
+
+
+\iffalse
+
+
+ 
+
 
 To achieve this goal, this thesis will target step changes in technological abilities in the following areas and showcase these improvements by applying these novel methods to important field management actions such as weed control.
 \begin{denseItemize}
@@ -20,57 +71,7 @@ This work package deals with the perception system of the UAV. In brief, this in
 \item A module to {\bf interpret the aerial maps} and convert them into semantic information needed for {\bf agricultural decision making} both by the autonomous system, and by the farm operator.
 \end{denseItemize}
 
-\begin{itemize}
 
-\item  {\bf Localization}
-	
- The homogeneous visual nature of the crops on an agricultural field makes an accurate estimation of the UAV position difficult. Since GPS accuracy is not adequate for constructing the high resolution field maps or defining an optimal path for a UGV intervention, accurate localization of the UAV over the field will be obtained through a fusion of visual cues, inertial and GPS data. The performance of collaborative robot localization using SLAM from both the UGV and UAV perspectives will be investigated and incorporated to obtain a highly accurate position estimate for the UAV over the field.
-	
-\item {\bf Environment Modeling}
-
-  The survey data collected by the on-board sensors over multiple
-  flights will be used to build a multi-resolution spatio-temporal
-  database of the field. The raw sensor data will be converted into
-  semantic information about the field as described in task 2.3. The
-  interpreted data will be used to generate maps in human readable
-  format, with parameters suitable for informing the farmer, such as
-  crop density, plant health, weed pressure and nitrogen nutrition
-  status, as well as 3D reconstructions to be interpreted by the UGV.
-
-  This information will be used to support model-driven decision
-  making for farm management. Over the short term, this may include
-  determining a feasible path for the UGV through the field, detection
-  of weeds, indicating areas requiring water or fertilizer and
-  detecting any trespassing animals. Over the long term, the database
-  may be used to measure crop growth over time and compare field
-  performance over seasons to optimize when and how much external
-  inputs are added, in order to maximize yield and minimize input.
-
-  The aerial map construction process will address data association,
-  filtering, data fusion, and map optimization.  The sensor data will
-  be locally fused in a robust, multi-sensor, semi-direct optimization
-  framework.  For each sensor, we will associate a confidence that
-  depends on basic robot state parameters (e.g., the UAV altitude,
-  time, etc.) and on the environment conditions (e.g., weather
-  conditions, environment morphology, etc.).  The confidence
-  information will be dynamically exploited inside the
-  optimization. For instance, if the UAV is flying at a low altitude
-  in a partially occluded environment, the GPS readings will be
-  trusted less due to the possible signal occlusions or reflection
-  resulting from the surrounding structures that decrease the quality
-  of the GPS signal.  In a joint development with WP4, we will extend
-  our existing optimization framework g2o for map optimization. More
-  details are provided in WP4.
-
-
-
-\item {\bf Data Analysis and Interpretation}
-
- The raw data collected by on board sensors of the UAV will be analyzed and converted into semantic information about the crops growing on the field. Specifically, the images captured by the RGBI and thermal cameras will be converted into normalized vegetation indices representing the general health of the crops on the field. Other well known plant growth and vitality indicators such as height, canopy cover and leaf greenness will also be estimated. These parameter estimates obtained using the UAV data, will be compared with state of the art estimates for the field parameters obtained from ETHZ's unique Field Phenotyping Platform (FIP) facility at Lindau-Eschikon in order to verify their accuracy and robustness. Furthermore, a scientific methodology for calculating farm input recommendations, using a combination of these parameters, will be developed and tested for efficacy, improving transparency amongst the general public and farmers who currently have to rely on black-box estimates provided by equipment manufacturers.
- 
-\end{itemize}
-
-\iffalse
 \begin{deliverables}{\WPBNo}
 
 \item {\bf UAV Localization} \putright{{\bf M15(i), M35}}
